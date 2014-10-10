@@ -14,7 +14,13 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		foreach(range(1,20) as $index)
+        {
+            $user = new \App\User;
+            $user->email = 'foo' . $index . '@foo.com';
+
+            $user->save();
+        }
 	}
 
 }
